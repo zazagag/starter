@@ -1,0 +1,77 @@
+{
+	"extends": [
+		"ts-react-important-stuff",
+		"plugin:import/recommended",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"rules": {
+		"prettier/prettier": 0,
+		"react/display-name": 0,
+		"class-methods-use-this": [0],
+		"comma-dangle": [2, "always-multiline"],
+		"complexity": [2, { "max": 8 }],
+		"semi": [2, "never"],
+		"@typescript-eslint/semi": [2, "never"],
+		"key-spacing": ["error", { "mode": "strict" }],
+		"no-multi-spaces": [0],
+		"padded-blocks": [0],
+		"no-return-assign": [0],
+		"max-len": [
+			2,
+			{
+				"code": 120,
+				"ignorePattern": "^import\\W.*",
+				"comments": 140,
+				"ignoreUrls": true
+			}
+		],
+		"generator-star-spacing": [0],
+		"array-bracket-spacing": [1],
+		"object-curly-spacing": [1, "always"],
+		"object-curly-newline": ["error", { "consistent": true }],
+		"import/prefer-default-export": [0],
+		"import/no-default-export": [0],
+		"import/order": 0,
+		"import/no-unresolved": 0,
+		"indent": [
+			1,
+			2,
+			{ "SwitchCase": 1 }
+		],
+		"react/jsx-filename-extension": [2, { "extensions": [".js", ".tsx"] }],
+		"jsx-a11y/no-static-element-interactions": 0
+	},
+	"overrides": [
+		{
+			"files": [
+				"**/selectors/*.ts",
+				"**/*.validator.ts"
+			],
+			"rules": {
+				"max-len": 0
+			}
+		},
+		{
+			"files": [
+				"src/components/LocalizationAppDatasheet/reducer.ts",
+				"src/components/LocalizationAppDatasheet/actions.ts"
+			],
+			"rules": {
+				"complexity": 0
+			}
+		},
+		{
+			"files": [
+				"**/store/config/configureStore.ts"
+			],
+			"rules": {
+				"no-console": 0
+			}
+		}
+	]
+}
